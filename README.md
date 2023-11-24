@@ -13,7 +13,7 @@ This percentage is small, and there is enough reason to focus on more common lan
 Personally, I chose to learn x86 assembly for the challenge, and to better understand how a computer works at a low-level. My field of study is computer science and not systems engineering, yet I believe that a strong understanding of low-level languages can help me learn C and C++, and perhaps give me an advantage in the job market.
 
 And as a bottom line, it's never too late nor a bad idea to learn something new. And assembly can be fun!
-## Part 1
+## Part 0
 
 Before starting, I suggest taking a look at my document containing the (assuming that I have remembered to keep it up to date, please remind me if I haven't).
 

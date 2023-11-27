@@ -10,59 +10,25 @@ According to Stack Overflow's 2023 Developer Survey, Assembly is only used by 4.
 
 This percentage is small, and there is enough reason to focus on more common languages (for what it's worth, the most common language used was Javascript). As a software developer, the lowest language you will likely encounter is C, which is significantly more straightforward to learn than Assembly. So perhaps assembly is best left to the systems engineers.
 
-Personally, I chose to learn x86 assembly for the challenge, and to better understand how a computer works at a low-level. My field of study is computer science and not systems engineering, yet I believe that a strong understanding of low-level languages can help me learn C and C++, and perhaps give me an advantage in the job market.
+Personally, I chose to learn x86 assembly for the challenge, and to better understand how a computer works at a low-level. My field of study is computer science and not systems engineering, yet I believe that a strong understanding of low-level languages can help me understand computer better.
 
-And as a bottom line, it's never too late nor a bad idea to learn something new. And assembly can be fun!
+However, if you're looking for something more useful to learn, you are likely better off learning Verilog, VHDL, or RTL, for competency in embedded systems.
 ## Part 0
 
-Before starting, I suggest taking a look at my document containing the (assuming that I have remembered to keep it up to date, please remind me if I haven't).
+We will be using a Linux environment to assemble and run our programs.
 
-Start by navigating to the Part 1 folder and opening simplest-assembly-program in a text editor of your choice.
-<details>
-<summary> The Simplest Assembly Program </summary>
-<br>
-No more "Hello World!"
-This assembly program is even simpler than printing Hello World to the console. This assembly program simply exits itself, doing absolutely nothing!
-<br>
-I'll break it down line by line.
+I have included a simple bash script to automate the process, located in the main directory. Rename the file you want to run to ```index.asm``` and then run the script. It will assemble, run, and then print the exit code of that program (which is 0, if everything works correctly).
 
-```
-global _start
-```
+Start by navigating to the Part 0 folder and opening simplest-assembly-program in a text editor of your choice, and follow the readme instructions there.
 
-The global keyowrd allows our "function", which is actually a label _start, to be visible by other programs outside of this file. _start marks the entry point of the program. So, with this line we are ensuring the entry point of this assembly program is visible to the      assembler and linker.
+# Topics Currently Covered in This Series
 
-```
-section .text
-```
-We are declaring the section that contains the code for our assembly program.
+- Assembly and its compilers
+- Printing a string
+- Taking user input
 
-```
-_start:	mov rax, 60 ; 60 is the system exit call for Linux
-	mov rdi, 0
-	syscall
-```
-I'll break this down line by line. .start: indicates the the code for our _start label.
-
-```
-mov rax, 60
-```
-
-This program uses AT&T syntax. In this syntax, we write basic instructions in this order:
-```
-instruction destination, value / origin
-```
-
-So mov rax, 60 in plain english means "move 60 into the RAX register". The last value can be another register, in which case the value of the origin is COPIED, not moved, into the destination. The origin will still contain its value.
-<br>
-
-But why did I choose to move the number 60 into this register?
-<br>
-
-This is because I am writing assembly for Linux (Ubuntu). In Linux, 60 corresponds to the exit system call. We copy this value into the RAX register, which conventionally stores our system call values.
-<br>
-
-So, when syscall is called later, the value 60 will be read from the RAX register by the Linux kernel, and the kernel will then exit the program. We will explore other system calls in later tutorials.
-
-  </details>
-
+# Tutorials still in progress
+- Conditional statements
+- Arithmetic operations and results
+- Functions
+- More
